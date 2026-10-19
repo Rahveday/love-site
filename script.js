@@ -61,7 +61,7 @@ async function setupSharedCounter() {
     }
 
     countDisplay.textContent = data.count;
-    counterStatus.textContent = "İkinizin de tıklamaları ortak sayılır.";
+    counterStatus.textContent = "Aşk Sayacımız🐼🐰❤️.";
     counterReady = true;
 
     supabaseClient
