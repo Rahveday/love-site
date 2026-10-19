@@ -134,10 +134,16 @@ button:active { transform: scale(.97); }
     justify-content: center;
     align-items: center;
     z-index: 999;
-    transition: opacity 1s ease;
+    transition: opacity 0.3s ease;
 }
 
-#overlay.hide { opacity: 0; }
+#overlay.show {
+    display: flex;
+}
+
+#overlay.hide {
+    opacity: 0;
+}
 
 #messageText {
     color: white;
