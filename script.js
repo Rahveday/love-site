@@ -141,3 +141,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ORTAK SAYACI BAŞLAT
 setupSharedCounter();
+
+
+ // BANA BAS: ROMANTİK MESAJ GÖSTER
+const loveButton = document.getElementById("loveButton");
+const overlay = document.getElementById("overlay");
+const messageText = document.getElementById("messageText");
+
+const loveMessages = [
+    "İyi ki hayatıma girdin aşkparemm.",
+    "Seninle geçen her an benim ömrümü uzatıyor.",
+    "Dünyada en sevdiğim tat senin Dudaklarınn.",
+    "Seni çok ama çoook ama çooooook seviyorumm.",
+    "Gülüşünü görmek günümün en güzel anı.",
+    "Sen benim en güzel tesadüfümsün.",
+    "Sen benim Minnak Melekimsin.",
+    "İyi ki biz olmuşuz.",
+    "Kalbimin en güzel yeri hep senin.",
+    "Sana sarılabildiğim her gün her saniye her daika güzel."
+];
+
+loveButton.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * loveMessages.length);
+    messageText.textContent = loveMessages[randomIndex];
+    overlay.classList.add("show");
+
+    setTimeout(() => {
+        overlay.classList.remove("show");
+    }, 3500);
+});
+
