@@ -1,29 +1,91 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bizim Sitemiz ❤️</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div id="hearts" aria-hidden="true"></div>
 
- <div id="hearts"></div>
+    <main class="site-content">
+        <section class="panel intro-panel">
+            <button id="loveButton" type="button">💖 Bana Bas 💖</button>
+            <p class="hint">Bir dokunuş, bir güzel mesaj.</p>
+        </section>
 
-<button id="loveButton">💖 Bana Bas 💖</button>
+        <section class="panel counter-panel">
+            <h1>Birlikte geçirdiğimiz zaman</h1>
+            <div id="daysCount" class="days-number">...</div>
+            <p id="sinceText" class="muted">19 Haziran 2026'dan beri</p>
+            <div id="timeElapsed" class="elapsed-time" aria-live="polite"></div>
+        </section>
 
-<div id="overlay">
-    <div id="messageText"></div>
+        <section class="panel counter-panel">
+            <h2>Birbirimize bıraktığımız kalpler</h2>
+            <div id="clickCount" class="days-number">...</div>
+            <button id="countButton" class="secondary-button" type="button">❤️ Kalp bırak (+1)</button>
+            <p id="counterStatus" class="muted" aria-live="polite">Ortak sayaç yükleniyor…</p>
+        </section>
+
+        <section class="panel music-panel">
+            <h2>Bizim şarkılarımız</h2>
+            <p class="muted">Şarkıları dinlemek için Spotify oynatıcısını kullan.</p>
+            <iframe
+                title="Ortak Spotify çalma listemiz"
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/31sarbyufKogXWSIx1rR5J?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </section>
+    </main>
+
+    <div id="overlay" role="status" aria-live="polite">
+        <div id="messageText"></div>
+    </div>
+    <div id="messages" aria-hidden="true"></div>
+
+    <!-- Supabase JS: ortak sayacı iki cihazda aynı tutar. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+    
+<!-- Gizli kalp -->
+<button id="secretHeart" class="secret-heart" aria-label="Gizli sürpriz">♥</button>
+
+<!-- Gizli panda ve tavşan penceresi -->
+<div id="secretPopup" class="secret-popup" aria-hidden="true">
+    <div class="secret-card">
+        <button id="closeSecret" class="secret-close" aria-label="Kapat">×</button>
+
+        <p class="secret-eyebrow">SADECE MELEKİME ÖZEL</p>
+
+        <div class="secret-couple">
+            <div class="secret-character panda">
+                <span class="character-emoji">🐼</span>
+                <span class="character-item">🍯</span>
+                <p>Koca pandam</p>
+            </div>
+
+            <span class="secret-heart-between">♥</span>
+
+            <div class="secret-character rabbit">
+                <span class="character-emoji">🐰</span>
+                <span class="character-item">🍒</span>
+                <p>Minik tavşanım</p>
+            </div>
+        </div>
+
+        <p class="secret-message">
+            Bu küçük dünyanın en güzel yanı içinde senin olman.
+        </p>
+        <span class="secret-footer">Seni seviyorum ♥</span>
+    </div>
 </div>
 
-<div id="messages"></div>
-
-<script src="script.js"></script>
-
 </body>
-
 </html>
-
