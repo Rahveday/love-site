@@ -93,8 +93,8 @@ let counterReady = false;
 async function setupSharedCounter() {
     if (
     !window.supabase ||
-    SUPABASE_URL.includes("BURAYA") ||
-    SUPABASE_ANON_KEY.includes("BURAYA")
+    SUPABASE_URL.includes("https://ndnplemxzbgtkwmxwtfs.supabase.co") ||
+    SUPABASE_ANON_KEY.includes("sb_publishable_x5WT3VitBdTbciUxLAagfw_9L2Cs2q7")
 ) {
         countDisplay.textContent = "—";
         counterStatus.textContent = "Ortak sayacı etkinleştirmek için Supabase kurulumu gerekiyor.";
