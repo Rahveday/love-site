@@ -91,14 +91,14 @@ let supabaseClient = null;
 let counterReady = false;
 
 async function setupSharedCounter() {
-    if (!window.supabase || SUPABASE_URL.includes("_BURAYA") || SUPABASE_ANON_KEY.includes("_BURAYA")) {
+    if (!window.supabase || SUPABASE_URL.includes("_https://ndnplemxzbgtkwmxwtfs.supabase.co") || sb_publishable_x5WT3VitBdTbciUxLAagfw_9L2Cs2q7.includes("_BURAYA")) {
         countDisplay.textContent = "—";
         counterStatus.textContent = "Ortak sayacı etkinleştirmek için Supabase kurulumu gerekiyor.";
         countButton.disabled = true;
         return;
     }
 
-    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    supabaseClient = window.supabase.createClient(https://ndnplemxzbgtkwmxwtfs.supabase.co, sb_publishable_x5WT3VitBdTbciUxLAagfw_9L2Cs2q7);
 
     const { data, error } = await supabaseClient
         .from("love_counter")
