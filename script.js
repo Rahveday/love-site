@@ -70,7 +70,7 @@ function updateRelationshipClock() {
     const minutes = Math.floor((elapsed % 3600000) / 60000);
     const seconds = Math.floor((elapsed % 60000) / 1000);
 
-    document.getElementById("daysCount").textContent = days;
+    document.getElementById("daysCount").textContent = `${days} Gün`;
     document.getElementById("timeElapsed").textContent =
         `${hours} saat ${minutes} dakika ${seconds} saniye`;
 }
@@ -91,14 +91,20 @@ let supabaseClient = null;
 let counterReady = false;
 
 async function setupSharedCounter() {
-    if (!window.supabase || SUPABASE_URL.includes("_https://ndnplemxzbgtkwmxwtfs.supabase.co") || sb_publishable_x5WT3VitBdTbciUxLAagfw_9L2Cs2q7.includes("_BURAYA")) {
+    if (
+    !window.supabase ||
+    SUPABASE_URL.includes("BURAYA") ||
+    SUPABASE_ANON_KEY.includes("BURAYA")
+) {
         countDisplay.textContent = "—";
         counterStatus.textContent = "Ortak sayacı etkinleştirmek için Supabase kurulumu gerekiyor.";
         countButton.disabled = true;
         return;
     }
 
-    supabaseClient = window.supabase.createClient(https://ndnplemxzbgtkwmxwtfs.supabase.co, sb_publishable_x5WT3VitBdTbciUxLAagfw_9L2Cs2q7);
+    supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
 
     const { data, error } = await supabaseClient
         .from("love_counter")
